@@ -58,3 +58,6 @@ server.log
 /db/
 /upload/
 public/nakoyonjo-deb-postgres.zip
+
+# Exported database dumps (contain password hashes / personal data)
+/scripts/migration-data/

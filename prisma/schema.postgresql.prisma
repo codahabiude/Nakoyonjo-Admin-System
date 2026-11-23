@@ -1,0 +1,272 @@
+// School Administration System - Nakoyonjo DEB, Bungoma, Kenya
+// Prisma Schema with PostgreSQL (for Docker / local PostgreSQL / Supabase)
+//
+// HOW TO USE WITH DOCKER:
+// 1. Copy this file to schema.prisma (backup the original first)
+// 2. Run: docker compose up -d  (uses the docker-compose.yml in project root)
+// 3. Set .env: DATABASE_URL=postgresql://schooladmin:schoolpass@localhost:5432/school_admin
+// 4. Run: npx prisma db push
+// 5. Run: npx prisma generate
+//
+// HOW TO USE WITH SUPABASE:
+// 1. Copy this file to schema.prisma
+// 2. Set .env: DATABASE_URL=postgresql://postgres:YOUR-PASSWORD@db.XXXX.supabase.co:5432/postgres
+//    (URL-encode special chars in password: < = %3C, > = %3E, \ = %5C)
+// 3. Run: npx prisma db push
+// 4. Run: npx prisma generate
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// AUTHENTICATION & USERS
+// ============================================================
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("TEACHER")
+  phone     String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  teacher Teacher?
+
+  @@map("users")
+}
+
+model Teacher {
+  id            String   @id @default(cuid())
+  employeeId    String   @unique
+  phone         String?
+  qualification String?
+  dateJoined    DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  userId String  @unique
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  classes  TeacherClass[]
+  subjects TeacherSubject[]
+
+  @@map("teachers")
+}
+
+model Class {
+  id           String   @id @default(cuid())
+  name         String
+  academicYear String   @default("2026")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  students        Student[]
+  subjects        ClassSubject[]
+  teachers        TeacherClass[]
+  teacherSubjects TeacherSubject[]
+  attendance      Attendance[]
+  exams           Exam[]
+
+  @@unique([name, academicYear])
+  @@map("classes")
+}
+
+model Subject {
+  id          String @id @default(cuid())
+  code        String @unique
+  name        String
+  category    String @default("CORE")
+  description String?
+
+  classes         ClassSubject[]
+  markRecords     StudentMark[]
+  teacherSubjects TeacherSubject[]
+
+  @@map("subjects")
+}
+
+model TeacherSubject {
+  id         String   @id @default(cuid())
+  teacherId  String
+  classId    String
+  subjectId  String
+  assignedAt DateTime @default(now())
+
+  teacher Teacher @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([teacherId, classId, subjectId])
+  @@map("teacher_subjects")
+}
+
+model ClassSubject {
+  id        String   @id @default(cuid())
+  classId   String
+  subjectId String
+  createdAt DateTime @default(now())
+
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([classId, subjectId])
+  @@map("class_subjects")
+}
+
+model TeacherClass {
+  id         String   @id @default(cuid())
+  teacherId  String
+  classId    String
+  isPrimary  Boolean  @default(false)
+  assignedAt DateTime @default(now())
+
+  teacher Teacher @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@unique([teacherId, classId])
+  @@map("teacher_classes")
+}
+
+model Student {
+  id           String   @id @default(cuid())
+  firstName    String
+  lastName     String
+  dateOfBirth  DateTime?
+  gender       String   @default("UNKNOWN")
+  classId      String
+  enrolledAt   DateTime @default(now())
+  status       String   @default("ACTIVE")
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  guardianName     String?
+  guardianPhone    String?
+  guardianRelation String?
+  guardianIdNumber String?
+
+  class       Class        @relation(fields: [classId], references: [id])
+  attendance  Attendance[]
+  marks       StudentMark[]
+  examRemarks ExamRemark[]
+
+  @@map("students")
+}
+
+model Exam {
+  id        String   @id @default(cuid())
+  name      String
+  term      String
+  year      String   @default("2026")
+  examDate  DateTime?
+  maxMarks  Int      @default(100)
+  status    String   @default("ACTIVE")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  approvedBy String?
+  approvedAt DateTime?
+  closedBy   String?
+  closedAt   DateTime?
+
+  classId      String
+  class        Class         @relation(fields: [classId], references: [id])
+  marks        StudentMark[]
+  examRemarks  ExamRemark[]
+
+  @@map("exams")
+}
+
+model StudentMark {
+  id            String   @id @default(cuid())
+  examId        String
+  studentId     String
+  subjectId     String
+  marksObtained Int      @default(0)
+  remarks       String?
+  gradedAt      DateTime @default(now())
+  gradedBy      String
+
+  exam     Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+  student  Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subject  Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([examId, studentId, subjectId])
+  @@map("student_marks")
+}
+
+model ExamRemark {
+  id        String   @id @default(cuid())
+  examId    String
+  studentId String
+  remark    String
+  writtenBy String
+  writtenAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  exam    Exam    @relation(fields: [examId], references: [id], onDelete: Cascade)
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([examId, studentId])
+  @@map("exam_remarks")
+}
+
+model GradingScheme {
+  id          String @id @default(cuid())
+  name        String
+  isActive    Boolean @default(true)
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  grades GradeRule[]
+
+  @@map("grading_schemes")
+}
+
+model GradeRule {
+  id        String  @id @default(cuid())
+  schemeId  String
+  minMarks  Int
+  maxMarks  Int
+  grade     String
+  remark    String?
+  sortOrder Int     @default(0)
+
+  scheme GradingScheme @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+
+  @@map("grade_rules")
+}
+
+model Attendance {
+  id        String   @id @default(cuid())
+  studentId String
+  classId   String
+  date      String
+  status    String   @default("PRESENT")
+  markedBy  String
+  createdAt DateTime @default(now())
+
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, date])
+  @@map("attendance")
+}
+
+model SchoolSetting {
+  id        String @id @default(cuid())
+  key       String @unique
+  value     String
+  updatedAt DateTime @updatedAt
+
+  @@map("school_settings")
+}

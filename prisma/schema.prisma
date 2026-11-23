@@ -1,0 +1,389 @@
+// School Administration System - Nakoyonjo DEB, Bungoma, Kenya
+// Prisma Schema with SQLite (local development)
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+// ============================================================
+// AUTHENTICATION & USERS
+// ============================================================
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  password  String
+  name      String
+  role      String   @default("TEACHER") // ADMIN, TEACHER
+  phone     String?
+  isActive  Boolean  @default(true)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  teacher Teacher?
+  parent  Parent?
+
+  @@map("users")
+}
+
+// ============================================================
+// PARENTS (guardian accounts with portal access)
+// ============================================================
+
+model Parent {
+  id             String   @id @default(cuid())
+  phone          String?
+  alternatePhone String?
+  nationalId     String?
+  address        String?
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  userId String @unique
+  user   User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  children      ParentStudent[]
+  notifications NotificationLog[]
+
+  @@map("parents")
+}
+
+// ============================================================
+// JUNCTION: Parent <-> Student (many-to-many)
+// ============================================================
+
+model ParentStudent {
+  id        String   @id @default(cuid())
+  parentId  String
+  studentId String
+  relation  String   @default("Parent") // e.g. "Father", "Mother", "Guardian"
+  createdAt DateTime @default(now())
+
+  parent  Parent  @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([parentId, studentId])
+  @@map("parent_students")
+}
+
+// ============================================================
+// NOTIFICATION LOGS (SMS/WhatsApp audit trail)
+// ============================================================
+
+model NotificationLog {
+  id           String    @id @default(cuid())
+  type         String    @default("SMS")   // SMS, WHATSAPP
+  status       String    @default("PENDING") // PENDING, SENT, FAILED
+  message      String
+  recipient    String?
+  sentAt       DateTime?
+  errorMessage String?
+  createdAt    DateTime  @default(now())
+
+  // Relations
+  parentId  String
+  parent    Parent  @relation(fields: [parentId], references: [id], onDelete: Cascade)
+  studentId String
+  student   Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  examId    String
+  exam      Exam    @relation(fields: [examId], references: [id], onDelete: Cascade)
+
+  @@map("notification_logs")
+}
+
+// ============================================================
+// TEACHERS
+// ============================================================
+
+model Teacher {
+  id            String   @id @default(cuid())
+  employeeId    String   @unique              // e.g. TCH-001
+  phone         String?
+  qualification String?
+  dateJoined    DateTime @default(now())
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Relations
+  userId String  @unique
+  user   User    @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  classes  TeacherClass[]
+  subjects TeacherSubject[]
+
+  @@map("teachers")
+}
+
+// ============================================================
+// CLASSES
+// ============================================================
+
+model Class {
+  id          String   @id @default(cuid())
+  name        String                        // e.g. "Grade 1", "Grade 10"
+  academicYear String   @default("2026")     // e.g. "2026"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  students    Student[]
+  subjects    ClassSubject[]
+  teachers    TeacherClass[]
+  teacherSubjects TeacherSubject[]
+  attendance  Attendance[]
+  exams       Exam[]
+
+  @@unique([name, academicYear])
+  @@map("classes")
+}
+
+// ============================================================
+// SUBJECTS (CBC Curriculum)
+// ============================================================
+
+model Subject {
+  id          String @id @default(cuid())
+  code        String @unique           // e.g. "ENG", "MAT", "ISS"
+  name        String                   // e.g. "English", "Mathematics"
+  category    String @default("CORE")  // CORE or OPTIONAL
+  description String?
+
+  // Relations
+  classes  ClassSubject[]
+  markRecords StudentMark[]
+  teacherSubjects TeacherSubject[]
+
+  @@map("subjects")
+}
+
+// ============================================================
+// JUNCTION: Teacher <-> Subject in a Class (triple relationship)
+// A teacher can teach Subject X in Class A, and Subject Y in Class B
+// ============================================================
+
+model TeacherSubject {
+  id        String   @id @default(cuid())
+  teacherId String
+  classId   String
+  subjectId String
+  assignedAt DateTime @default(now())
+
+  teacher Teacher @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([teacherId, classId, subjectId])
+  @@map("teacher_subjects")
+}
+
+// ============================================================
+// JUNCTION: Class <-> Subject (many-to-many)
+// ============================================================
+
+model ClassSubject {
+  id        String   @id @default(cuid())
+  classId   String
+  subjectId String
+  createdAt DateTime @default(now())
+
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+  subject Subject @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([classId, subjectId])
+  @@map("class_subjects")
+}
+
+// ============================================================
+// JUNCTION: Teacher <-> Class (many-to-many)
+// ============================================================
+
+model TeacherClass {
+  id        String   @id @default(cuid())
+  teacherId String
+  classId   String
+  isPrimary Boolean  @default(false)  // Is this the class teacher?
+  assignedAt DateTime @default(now())
+
+  teacher Teacher @relation(fields: [teacherId], references: [id], onDelete: Cascade)
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@unique([teacherId, classId])
+  @@map("teacher_classes")
+}
+
+// ============================================================
+// STUDENTS
+// ============================================================
+
+model Student {
+  id            String   @id @default(cuid())
+  firstName     String
+  lastName      String
+  dateOfBirth   DateTime?
+  gender        String   @default("UNKNOWN")  // MALE, FEMALE, UNKNOWN
+  classId       String
+  enrolledAt    DateTime @default(now())
+  status        String   @default("ACTIVE")   // ACTIVE, TRANSFERRED, GRADUATED, DROPPED
+  createdAt     DateTime @default(now())
+  updatedAt     DateTime @updatedAt
+
+  // Guardian info
+  guardianName    String?
+  guardianPhone   String?
+  guardianRelation String?
+  guardianIdNumber String?
+
+  // Relations
+  class      Class       @relation(fields: [classId], references: [id])
+  attendance Attendance[]
+  marks      StudentMark[]
+  examRemarks ExamRemark[]
+  parents    ParentStudent[]
+  notifications NotificationLog[]
+
+  @@map("students")
+}
+
+// ============================================================
+// EXAMS
+// ============================================================
+
+model Exam {
+  id           String   @id @default(cuid())
+  name         String                      // e.g. "Term 1 Opener", "End of Year"
+  term         String                      // "Term 1", "Term 2", "Term 3"
+  year         String   @default("2026")  // academic year
+  examDate     DateTime?
+  maxMarks     Int      @default(100)     // max marks per subject
+  status       String   @default("ACTIVE") // ACTIVE, APPROVED, CLOSED
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Approval & closure audit trail
+  approvedBy   String?
+  approvedAt   DateTime?
+  closedBy     String?
+  closedAt     DateTime?
+
+  // Relations
+  classId String @default("")
+  class   Class  @relation(fields: [classId], references: [id])
+  marks   StudentMark[]
+  examRemarks ExamRemark[]
+  notifications NotificationLog[]
+
+  @@map("exams")
+}
+
+// ============================================================
+// STUDENT MARKS
+// ============================================================
+
+model StudentMark {
+  id            String   @id @default(cuid())
+  examId        String
+  studentId     String
+  subjectId     String
+  marksObtained Int      @default(0)
+  remarks       String?                  // e.g. "Excellent", "Needs improvement"
+  gradedAt      DateTime @default(now())
+  gradedBy      String                   // User ID who entered marks
+
+  exam     Exam     @relation(fields: [examId], references: [id], onDelete: Cascade)
+  student  Student  @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  subject  Subject  @relation(fields: [subjectId], references: [id], onDelete: Cascade)
+
+  @@unique([examId, studentId, subjectId])
+  @@map("student_marks")
+}
+
+// ============================================================
+// CLASS TEACHER REMARKS (general comment per student per exam)
+// ============================================================
+
+model ExamRemark {
+  id        String   @id @default(cuid())
+  examId    String
+  studentId String
+  remark    String
+  writtenBy String
+  writtenAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  exam    Exam    @relation(fields: [examId], references: [id], onDelete: Cascade)
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+
+  @@unique([examId, studentId])
+  @@map("exam_remarks")
+}
+
+// ============================================================
+// GRADING SYSTEM
+// ============================================================
+
+model GradingScheme {
+  id          String @id @default(cuid())
+  name        String                        // e.g. "Default", "CBC 2026"
+  isActive    Boolean @default(true)        // Only one scheme should be active
+  description String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  grades      GradeRule[]
+
+  @@map("grading_schemes")
+}
+
+model GradeRule {
+  id           String  @id @default(cuid())
+  schemeId     String
+  minMarks     Int                           // Minimum marks for this grade (inclusive)
+  maxMarks     Int                           // Maximum marks for this grade (inclusive)
+  grade        String                        // e.g. "A", "B-", "E"
+  remark       String?                       // e.g. "Excellent", "Good", "Fail"
+  sortOrder    Int     @default(0)            // Higher sort = checked first
+
+  scheme       GradingScheme @relation(fields: [schemeId], references: [id], onDelete: Cascade)
+
+  @@map("grade_rules")
+}
+
+// ============================================================
+// ATTENDANCE
+// ============================================================
+
+model Attendance {
+  id        String   @id @default(cuid())
+  studentId String
+  classId   String
+  date      String                       // ISO date string YYYY-MM-DD
+  status    String   @default("PRESENT") // PRESENT, ABSENT, LATE
+  markedBy  String                       // User ID who marked it
+  createdAt DateTime @default(now())
+
+  student Student @relation(fields: [studentId], references: [id], onDelete: Cascade)
+  class   Class   @relation(fields: [classId], references: [id], onDelete: Cascade)
+
+  @@unique([studentId, date])  // One record per student per day
+  @@map("attendance")
+}
+
+// ============================================================
+// SCHOOL SETTINGS (for term dates, school info, etc.)
+// ============================================================
+
+model SchoolSetting {
+  id    String @id @default(cuid())
+  key   String @unique                    // e.g. "sms_api_key", "term1_start", "term1_end"
+  value String
+  updatedAt DateTime @updatedAt
+
+  @@map("school_settings")
+}

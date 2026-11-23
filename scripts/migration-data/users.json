@@ -1,0 +1,123 @@
+[
+  {
+    "id": "cmsyo48hr000fqnm68ksi3qpv",
+    "email": "admin@nakoyonjo.ac.ke",
+    "password": "$2b$10$8G.Wdi1Oq9xornFxOl4uCu.QDJhTj1ADljcX4dtJqUzfBHoKBomgy",
+    "name": "Mrs. Agnes Wanjiku",
+    "role": "ADMIN",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.920Z",
+    "updatedAt": "2026-08-19T13:47:11.626Z"
+  },
+  {
+    "id": "cmsyo48hs000gqnm6p1e7055s",
+    "email": "grace.naswa@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Ms. Grace Naswa",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.921Z",
+    "updatedAt": "2026-08-18T12:57:53.921Z"
+  },
+  {
+    "id": "cmsyo48ht000hqnm6ygbs1gax",
+    "email": "peter.wekesa@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Mr. Peter Wekesa",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.921Z",
+    "updatedAt": "2026-08-18T12:57:53.921Z"
+  },
+  {
+    "id": "cmsyo48ht000iqnm6h5mtcd5a",
+    "email": "lucy.chepkemoi@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Ms. Lucy Chepkemoi",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.921Z",
+    "updatedAt": "2026-08-18T12:57:53.921Z"
+  },
+  {
+    "id": "cmsyo48ht000jqnm6l40pwam5",
+    "email": "david.kimani@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Mr. David Kimani",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.922Z",
+    "updatedAt": "2026-08-18T12:57:53.922Z"
+  },
+  {
+    "id": "cmsyo48ht000kqnm6p85g8mzv",
+    "email": "mary.wanjiku@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Ms. Mary Wanjiku",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.922Z",
+    "updatedAt": "2026-08-18T12:57:53.922Z"
+  },
+  {
+    "id": "cmsyo48hu000lqnm6qbsxb5dm",
+    "email": "samuel.rotich@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Mr. Samuel Rotich",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.922Z",
+    "updatedAt": "2026-08-18T12:57:53.922Z"
+  },
+  {
+    "id": "cmsyo48hu000mqnm6adlvbgjr",
+    "email": "doris.akinyi@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Ms. Doris Akinyi",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.922Z",
+    "updatedAt": "2026-08-18T12:57:53.922Z"
+  },
+  {
+    "id": "cmsyo48hu000nqnm6wut37438",
+    "email": "henry.kiprop@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Mr. Henry Kiprop",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.923Z",
+    "updatedAt": "2026-08-18T12:57:53.923Z"
+  },
+  {
+    "id": "cmsyo48hu000oqnm6ptosrnfd",
+    "email": "faith.njeri@nakoyonjo.ac.ke",
+    "password": "$2b$10$jgCJ5TBt3SrShQkuiL3wyevT/hqAAKbE6EzU8Sl9dCCAxwo1Q89py",
+    "name": "Ms. Faith Njeri",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.923Z",
+    "updatedAt": "2026-08-18T12:57:53.923Z"
+  },
+  {
+    "id": "cmsyo48hv000pqnm62zc3o2mj",
+    "email": "james.mwangi@nakoyonjo.ac.ke",
+    "password": "$2b$10$FGyZmZNE8nZJ9prZsZjxCeV.5wvJt5QkziAx9sSv8IbQuPmB8dP/y",
+    "name": "Mr. James Mwangi",
+    "role": "TEACHER",
+    "phone": null,
+    "isActive": true,
+    "createdAt": "2026-08-18T12:57:53.923Z",
+    "updatedAt": "2026-08-19T13:47:11.700Z"
+  }
+]

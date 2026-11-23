@@ -1,0 +1,310 @@
+[
+  {
+    "id": "cmsyo48in004tqnm6ogoe6nqd",
+    "teacherId": "cmsyo48in004pqnm6dvyamq97",
+    "classId": "cmsyo48i00015qnm66ekustmq",
+    "subjectId": "cmsyo48hx000wqnm6v2j63537",
+    "assignedAt": "2026-08-18T12:57:53.951Z"
+  },
+  {
+    "id": "cmsyo48in004uqnm6q792vs3m",
+    "teacherId": "cmsyo48in004pqnm6dvyamq97",
+    "classId": "cmsyo48i00015qnm66ekustmq",
+    "subjectId": "cmsyo48hx000tqnm6x1mdppyo",
+    "assignedAt": "2026-08-18T12:57:53.951Z"
+  },
+  {
+    "id": "cmsyo48in004vqnm6v7ze50tw",
+    "teacherId": "cmsyo48in004pqnm6dvyamq97",
+    "classId": "cmsyo48hy000xqnm66e47ttwf",
+    "subjectId": "cmsyo48hx000wqnm6v2j63537",
+    "assignedAt": "2026-08-18T12:57:53.951Z"
+  },
+  {
+    "id": "cmsyo48in004wqnm6vm7ynweq",
+    "teacherId": "cmsyo48in004pqnm6dvyamq97",
+    "classId": "cmsyo48hy000zqnm6rjo0jr6u",
+    "subjectId": "cmsyo48hx000wqnm6v2j63537",
+    "assignedAt": "2026-08-18T12:57:53.951Z"
+  },
+  {
+    "id": "cmsyo48in004xqnm62saa3j0z",
+    "teacherId": "cmsyo48in004pqnm6dvyamq97",
+    "classId": "cmsyo48hy000zqnm6rjo0jr6u",
+    "subjectId": "cmsyo48hx000tqnm6x1mdppyo",
+    "assignedAt": "2026-08-18T12:57:53.951Z"
+  },
+  {
+    "id": "cmsyo48io0053qnm60zz2z42m",
+    "teacherId": "cmsyo48io004zqnm61p2nyl49",
+    "classId": "cmsyo48hy000xqnm66e47ttwf",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.952Z"
+  },
+  {
+    "id": "cmsyo48io0054qnm6loh7lu8a",
+    "teacherId": "cmsyo48io004zqnm61p2nyl49",
+    "classId": "cmsyo48hy000xqnm66e47ttwf",
+    "subjectId": "cmsyo48hw000rqnm6vy695b0u",
+    "assignedAt": "2026-08-18T12:57:53.952Z"
+  },
+  {
+    "id": "cmsyo48io0055qnm6nbt436pr",
+    "teacherId": "cmsyo48io004zqnm61p2nyl49",
+    "classId": "cmsyo48i00015qnm66ekustmq",
+    "subjectId": "cmsyo48hw000rqnm6vy695b0u",
+    "assignedAt": "2026-08-18T12:57:53.952Z"
+  },
+  {
+    "id": "cmsyo48io0056qnm6rzh1yd1z",
+    "teacherId": "cmsyo48io004zqnm61p2nyl49",
+    "classId": "cmsyo48hy000zqnm6rjo0jr6u",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.952Z"
+  },
+  {
+    "id": "cmsyo48ip005cqnm6rytqo7g7",
+    "teacherId": "cmsyo48ip0058qnm6dojow5wa",
+    "classId": "cmsyo48hy000zqnm6rjo0jr6u",
+    "subjectId": "cmsyo48hx000uqnm6n2bz9t2z",
+    "assignedAt": "2026-08-18T12:57:53.953Z"
+  },
+  {
+    "id": "cmsyo48ip005dqnm6h9qx71cw",
+    "teacherId": "cmsyo48ip0058qnm6dojow5wa",
+    "classId": "cmsyo48hy000zqnm6rjo0jr6u",
+    "subjectId": "cmsyo48hw000sqnm6vmul9q97",
+    "assignedAt": "2026-08-18T12:57:53.953Z"
+  },
+  {
+    "id": "cmsyo48ip005eqnm68rtc4k0p",
+    "teacherId": "cmsyo48ip0058qnm6dojow5wa",
+    "classId": "cmsyo48hz0011qnm6iuekuucp",
+    "subjectId": "cmsyo48hx000uqnm6n2bz9t2z",
+    "assignedAt": "2026-08-18T12:57:53.953Z"
+  },
+  {
+    "id": "cmsyo48iq005kqnm6mfnx1t0n",
+    "teacherId": "cmsyo48iq005gqnm6r934whij",
+    "classId": "cmsyo48hz0011qnm6iuekuucp",
+    "subjectId": "cmsyo48hx000wqnm6v2j63537",
+    "assignedAt": "2026-08-18T12:57:53.954Z"
+  },
+  {
+    "id": "cmsyo48iq005lqnm6c2cicvbh",
+    "teacherId": "cmsyo48iq005gqnm6r934whij",
+    "classId": "cmsyo48hz0011qnm6iuekuucp",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.954Z"
+  },
+  {
+    "id": "cmsyo48iq005mqnm6zexu8tg1",
+    "teacherId": "cmsyo48iq005gqnm6r934whij",
+    "classId": "cmsyo48hy000yqnm63fdzcdhf",
+    "subjectId": "cmsyo48hx000wqnm6v2j63537",
+    "assignedAt": "2026-08-18T12:57:53.954Z"
+  },
+  {
+    "id": "cmsyo48iq005nqnm6i1it05ge",
+    "teacherId": "cmsyo48iq005gqnm6r934whij",
+    "classId": "cmsyo48hy000yqnm63fdzcdhf",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.954Z"
+  },
+  {
+    "id": "cmsyo48ir005tqnm6iy7tgs6g",
+    "teacherId": "cmsyo48ir005pqnm60mpyfkwz",
+    "classId": "cmsyo48hy000yqnm63fdzcdhf",
+    "subjectId": "cmsyo48hw000rqnm6vy695b0u",
+    "assignedAt": "2026-08-18T12:57:53.955Z"
+  },
+  {
+    "id": "cmsyo48ir005uqnm6m5ibu7rd",
+    "teacherId": "cmsyo48ir005pqnm60mpyfkwz",
+    "classId": "cmsyo48hy000yqnm63fdzcdhf",
+    "subjectId": "cmsyo48hx000vqnm6i2z40r2p",
+    "assignedAt": "2026-08-18T12:57:53.955Z"
+  },
+  {
+    "id": "cmsyo48ir005vqnm6a8rc6z3q",
+    "teacherId": "cmsyo48ir005pqnm60mpyfkwz",
+    "classId": "cmsyo48hz0010qnm6s5a529d4",
+    "subjectId": "cmsyo48hw000rqnm6vy695b0u",
+    "assignedAt": "2026-08-18T12:57:53.955Z"
+  },
+  {
+    "id": "cmsyo48ir005wqnm63fsq4uo9",
+    "teacherId": "cmsyo48ir005pqnm60mpyfkwz",
+    "classId": "cmsyo48hz0010qnm6s5a529d4",
+    "subjectId": "cmsyo48hx000vqnm6i2z40r2p",
+    "assignedAt": "2026-08-18T12:57:53.955Z"
+  },
+  {
+    "id": "cmsyo48is0062qnm6nne1zh5d",
+    "teacherId": "cmsyo48is005yqnm6kzn4p8qq",
+    "classId": "cmsyo48hz0010qnm6s5a529d4",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.956Z"
+  },
+  {
+    "id": "cmsyo48is0063qnm6o4985oym",
+    "teacherId": "cmsyo48is005yqnm6kzn4p8qq",
+    "classId": "cmsyo48hz0010qnm6s5a529d4",
+    "subjectId": "cmsyo48hx000tqnm6x1mdppyo",
+    "assignedAt": "2026-08-18T12:57:53.956Z"
+  },
+  {
+    "id": "cmsyo48is0064qnm6wmgxez2a",
+    "teacherId": "cmsyo48is005yqnm6kzn4p8qq",
+    "classId": "cmsyo48hz0012qnm67e9hctqs",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.956Z"
+  },
+  {
+    "id": "cmsyo48is0065qnm6ksgv3tmo",
+    "teacherId": "cmsyo48is005yqnm6kzn4p8qq",
+    "classId": "cmsyo48hz0012qnm67e9hctqs",
+    "subjectId": "cmsyo48hx000tqnm6x1mdppyo",
+    "assignedAt": "2026-08-18T12:57:53.956Z"
+  },
+  {
+    "id": "cmsyo48it006bqnm65j9s5fmx",
+    "teacherId": "cmsyo48it0067qnm620zfs98g",
+    "classId": "cmsyo48hz0012qnm67e9hctqs",
+    "subjectId": "cmsyo48hx000uqnm6n2bz9t2z",
+    "assignedAt": "2026-08-18T12:57:53.957Z"
+  },
+  {
+    "id": "cmsyo48it006cqnm66zy87wey",
+    "teacherId": "cmsyo48it0067qnm620zfs98g",
+    "classId": "cmsyo48hz0012qnm67e9hctqs",
+    "subjectId": "cmsyo48hw000sqnm6vmul9q97",
+    "assignedAt": "2026-08-18T12:57:53.957Z"
+  },
+  {
+    "id": "cmsyo48it006dqnm6ggd6pt9n",
+    "teacherId": "cmsyo48it0067qnm620zfs98g",
+    "classId": "cmsyo48hz0014qnm6ew0qxsjj",
+    "subjectId": "cmsyo48hx000uqnm6n2bz9t2z",
+    "assignedAt": "2026-08-18T12:57:53.957Z"
+  },
+  {
+    "id": "cmsyo48it006eqnm6cf5lt3ak",
+    "teacherId": "cmsyo48it0067qnm620zfs98g",
+    "classId": "cmsyo48hz0014qnm6ew0qxsjj",
+    "subjectId": "cmsyo48hw000sqnm6vmul9q97",
+    "assignedAt": "2026-08-18T12:57:53.957Z"
+  },
+  {
+    "id": "cmsyo48iu006kqnm665jwe01i",
+    "teacherId": "cmsyo48iu006gqnm6xxbc3n5u",
+    "classId": "cmsyo48hz0014qnm6ew0qxsjj",
+    "subjectId": "cmsyo48hx000wqnm6v2j63537",
+    "assignedAt": "2026-08-18T12:57:53.958Z"
+  },
+  {
+    "id": "cmsyo48iu006lqnm6atmrmyu1",
+    "teacherId": "cmsyo48iu006gqnm6xxbc3n5u",
+    "classId": "cmsyo48hz0014qnm6ew0qxsjj",
+    "subjectId": "cmsyo48hw000rqnm6vy695b0u",
+    "assignedAt": "2026-08-18T12:57:53.958Z"
+  },
+  {
+    "id": "cmsyo48iu006mqnm6f3s7hpej",
+    "teacherId": "cmsyo48iu006gqnm6xxbc3n5u",
+    "classId": "cmsyo48hz0013qnm6og93oqvg",
+    "subjectId": "cmsyo48hx000wqnm6v2j63537",
+    "assignedAt": "2026-08-18T12:57:53.958Z"
+  },
+  {
+    "id": "cmsyo48iu006nqnm6ekuffqpp",
+    "teacherId": "cmsyo48iu006gqnm6xxbc3n5u",
+    "classId": "cmsyo48hz0013qnm6og93oqvg",
+    "subjectId": "cmsyo48hw000rqnm6vy695b0u",
+    "assignedAt": "2026-08-18T12:57:53.958Z"
+  },
+  {
+    "id": "cmsyo48iv006tqnm6co9z4esz",
+    "teacherId": "cmsyo48iv006pqnm6w91ge8la",
+    "classId": "cmsyo48hz0013qnm6og93oqvg",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.959Z"
+  },
+  {
+    "id": "cmsyo48iv006uqnm6nfp1vjcf",
+    "teacherId": "cmsyo48iv006pqnm6w91ge8la",
+    "classId": "cmsyo48hz0013qnm6og93oqvg",
+    "subjectId": "cmsyo48hx000vqnm6i2z40r2p",
+    "assignedAt": "2026-08-18T12:57:53.959Z"
+  },
+  {
+    "id": "cmsyo48iv006vqnm626uzacol",
+    "teacherId": "cmsyo48iv006pqnm6w91ge8la",
+    "classId": "cmsyo48hz0013qnm6og93oqvg",
+    "subjectId": "cmsyo48hx000tqnm6x1mdppyo",
+    "assignedAt": "2026-08-18T12:57:53.959Z"
+  },
+  {
+    "id": "cmsyo48iv006wqnm6u5cz9ppv",
+    "teacherId": "cmsyo48iv006pqnm6w91ge8la",
+    "classId": "cmsyo48hz0014qnm6ew0qxsjj",
+    "subjectId": "cmsyo48hw000qqnm6aqslze8c",
+    "assignedAt": "2026-08-18T12:57:53.959Z"
+  },
+  {
+    "id": "cmsyo48iv0070qnm6vivit6lt",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48i00015qnm66ekustmq",
+    "subjectId": "cmsyo48hx000vqnm6i2z40r2p",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  },
+  {
+    "id": "cmsyo48iw0071qnm6kvx679eb",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48i00015qnm66ekustmq",
+    "subjectId": "cmsyo48hw000sqnm6vmul9q97",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  },
+  {
+    "id": "cmsyo48iw0072qnm6oubs2c0j",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48hy000xqnm66e47ttwf",
+    "subjectId": "cmsyo48hx000vqnm6i2z40r2p",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  },
+  {
+    "id": "cmsyo48iw0073qnm6hmvz3yd9",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48hy000xqnm66e47ttwf",
+    "subjectId": "cmsyo48hw000sqnm6vmul9q97",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  },
+  {
+    "id": "cmsyo48iw0074qnm6po3aov6n",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48hz0011qnm6iuekuucp",
+    "subjectId": "cmsyo48hx000vqnm6i2z40r2p",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  },
+  {
+    "id": "cmsyo48iw0075qnm6f73ueqzx",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48hy000yqnm63fdzcdhf",
+    "subjectId": "cmsyo48hw000sqnm6vmul9q97",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  },
+  {
+    "id": "cmsyo48iw0076qnm6w6c8pdx5",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48hz0010qnm6s5a529d4",
+    "subjectId": "cmsyo48hw000sqnm6vmul9q97",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  },
+  {
+    "id": "cmsyo48iw0077qnm6tztuhfsq",
+    "teacherId": "cmsyo48iv006yqnm6c3sm9blx",
+    "classId": "cmsyo48hz0012qnm67e9hctqs",
+    "subjectId": "cmsyo48hx000vqnm6i2z40r2p",
+    "assignedAt": "2026-08-18T12:57:53.960Z"
+  }
+]

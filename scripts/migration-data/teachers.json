@@ -1,0 +1,102 @@
+[
+  {
+    "id": "cmsyo48in004pqnm6dvyamq97",
+    "employeeId": "TCH-001",
+    "phone": "+254712345001",
+    "qualification": "B.Ed (Primary)",
+    "dateJoined": "2026-08-18T12:57:53.951Z",
+    "createdAt": "2026-08-18T12:57:53.951Z",
+    "updatedAt": "2026-08-18T12:57:53.951Z",
+    "userId": "cmsyo48hv000pqnm62zc3o2mj"
+  },
+  {
+    "id": "cmsyo48io004zqnm61p2nyl49",
+    "employeeId": "TCH-002",
+    "phone": "+254712345002",
+    "qualification": "B.Ed (Science)",
+    "dateJoined": "2026-08-18T12:57:53.952Z",
+    "createdAt": "2026-08-18T12:57:53.952Z",
+    "updatedAt": "2026-08-18T12:57:53.952Z",
+    "userId": "cmsyo48hs000gqnm6p1e7055s"
+  },
+  {
+    "id": "cmsyo48ip0058qnm6dojow5wa",
+    "employeeId": "TCH-003",
+    "phone": "+254712345003",
+    "qualification": "Diploma in Education",
+    "dateJoined": "2026-08-18T12:57:53.953Z",
+    "createdAt": "2026-08-18T12:57:53.953Z",
+    "updatedAt": "2026-08-18T12:57:53.953Z",
+    "userId": "cmsyo48ht000hqnm6ygbs1gax"
+  },
+  {
+    "id": "cmsyo48iq005gqnm6r934whij",
+    "employeeId": "TCH-004",
+    "phone": "+254712345004",
+    "qualification": "B.Ed (Arts)",
+    "dateJoined": "2026-08-18T12:57:53.954Z",
+    "createdAt": "2026-08-18T12:57:53.954Z",
+    "updatedAt": "2026-08-18T12:57:53.954Z",
+    "userId": "cmsyo48ht000iqnm6h5mtcd5a"
+  },
+  {
+    "id": "cmsyo48ir005pqnm60mpyfkwz",
+    "employeeId": "TCH-005",
+    "phone": "+254712345005",
+    "qualification": "B.Ed (Primary)",
+    "dateJoined": "2026-08-18T12:57:53.955Z",
+    "createdAt": "2026-08-18T12:57:53.955Z",
+    "updatedAt": "2026-08-18T12:57:53.955Z",
+    "userId": "cmsyo48ht000jqnm6l40pwam5"
+  },
+  {
+    "id": "cmsyo48is005yqnm6kzn4p8qq",
+    "employeeId": "TCH-006",
+    "phone": "+254712345006",
+    "qualification": "B.Ed (Mathematics)",
+    "dateJoined": "2026-08-18T12:57:53.956Z",
+    "createdAt": "2026-08-18T12:57:53.956Z",
+    "updatedAt": "2026-08-18T12:57:53.956Z",
+    "userId": "cmsyo48ht000kqnm6p85g8mzv"
+  },
+  {
+    "id": "cmsyo48it0067qnm620zfs98g",
+    "employeeId": "TCH-007",
+    "phone": "+254712345007",
+    "qualification": "Diploma in Education",
+    "dateJoined": "2026-08-18T12:57:53.957Z",
+    "createdAt": "2026-08-18T12:57:53.957Z",
+    "updatedAt": "2026-08-18T12:57:53.957Z",
+    "userId": "cmsyo48hu000lqnm6qbsxb5dm"
+  },
+  {
+    "id": "cmsyo48iu006gqnm6xxbc3n5u",
+    "employeeId": "TCH-008",
+    "phone": "+254712345008",
+    "qualification": "B.Ed (English)",
+    "dateJoined": "2026-08-18T12:57:53.958Z",
+    "createdAt": "2026-08-18T12:57:53.958Z",
+    "updatedAt": "2026-08-18T12:57:53.958Z",
+    "userId": "cmsyo48hu000mqnm6adlvbgjr"
+  },
+  {
+    "id": "cmsyo48iv006pqnm6w91ge8la",
+    "employeeId": "TCH-009",
+    "phone": "+254712345009",
+    "qualification": "B.Ed (Science)",
+    "dateJoined": "2026-08-18T12:57:53.959Z",
+    "createdAt": "2026-08-18T12:57:53.959Z",
+    "updatedAt": "2026-08-18T12:57:53.959Z",
+    "userId": "cmsyo48hu000nqnm6wut37438"
+  },
+  {
+    "id": "cmsyo48iv006yqnm6c3sm9blx",
+    "employeeId": "TCH-010",
+    "phone": "+254712345010",
+    "qualification": "B.Ed (Primary)",
+    "dateJoined": "2026-08-18T12:57:53.960Z",
+    "createdAt": "2026-08-18T12:57:53.960Z",
+    "updatedAt": "2026-08-18T12:57:53.960Z",
+    "userId": "cmsyo48hu000oqnm6ptosrnfd"
+  }
+]

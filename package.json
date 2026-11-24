@@ -15,8 +15,7 @@
     "cap:add:android": "npx cap add android",
     "cap:sync": "npx cap sync",
     "cap:open:android": "npx cap open android",
-    "cap:build:android": "npm run build:static && npx cap sync android && npx cap open android",
-    "build:static": "next build && next export"
+    "cap:build:android": "npx cap sync android && npx cap open android"
   },
   "dependencies": {
     "@capacitor/cli": "^8.5.3",

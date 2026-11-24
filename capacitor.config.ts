@@ -1,13 +1,16 @@
 import type { CapacitorConfig } from "@capacitor/cli";
 
+// The Android app is a shell that opens the hosted web app.
+// Set APP_URL (e.g. https://school.example.com) when syncing/building.
+const appUrl = process.env.APP_URL;
+
 const config: CapacitorConfig = {
   appId: "ke.co.ndeb.schooladmin",
   appName: "NDEB School Admin",
-  webDir: "out",
+  // Fallback page shown only if the server cannot be reached.
+  webDir: "www",
   server: {
-    // For development: point to your local dev server
-    // url: "http://192.168.X.X:3000",
-    // cleartext: true,
+    ...(appUrl ? { url: appUrl, cleartext: appUrl.startsWith("http://") } : {}),
     androidScheme: "https",
   },
   plugins: {
@@ -16,23 +19,17 @@ const config: CapacitorConfig = {
       launchAutoHide: true,
       backgroundColor: "#1e40af",
       showSpinner: false,
-      androidSplashResourceName: "splash",
       androidScaleType: "CENTER_CROP",
     },
     StatusBar: {
       style: "LIGHT",
       backgroundColor: "#1e40af",
     },
-    LocalNotifications: {
-      smallIcon: "ic_stat_icon_config_sample",
-      iconColor: "#1e40af",
-      sound: "beep.wav",
-    },
   },
   android: {
-    allowMixedContent: true,
+    allowMixedContent: false,
     captureInput: true,
-    webContentsDebuggingEnabled: true,
+    webContentsDebuggingEnabled: false,
   },
 };
 

@@ -111,14 +111,15 @@ The `scripts/` folder also holds the seed script, a password reset helper (`rese
 
 ## Android app
 
-The app can be wrapped with [Capacitor](https://capacitorjs.com) (app id `ke.co.ndeb.schooladmin`):
+The Android app is a [Capacitor](https://capacitorjs.com) shell (app id `ke.co.ndeb.schooladmin`) that opens the **hosted** web app, so the website and the app are always the same. You need the web app deployed online first.
 
-```bash
-npm run cap:add:android     # first time only
-npm run cap:build:android   # build, sync and open Android Studio
-```
+**Build the APK in the cloud (no Android Studio needed):**
 
-See `capacitor.config.ts` for the splash screen, status bar and server options.
+1. In your GitHub repo go to **Settings → Secrets and variables → Actions → Variables** and add `APP_URL` with your deployed address, for example `https://school.example.com`.
+2. Go to **Actions → Build Android APK → Run workflow**. When it finishes, download `NDEB-School-Admin-APK` from the run's **Artifacts**.
+3. To publish the APK for download, create a release with a tag that starts with `app-v` (for example `app-v1.0`). The workflow attaches the APK to that release.
+
+Notes: the build is a debug APK with the default Capacitor icon. If the server is unreachable, the app shows the fallback page in `www/index.html`. See `capacitor.config.ts` for splash screen and status bar options.
 
 ## Project structure
 
